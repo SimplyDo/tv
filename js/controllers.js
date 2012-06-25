@@ -22,7 +22,7 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
       'nasatelevision':'NASA',
       'revision3':'Revision3',
       'geekandsundry':'Geek & Sundray',
-      'totallyradshow':'The totally Rad Show',
+      'totallyradshow':'The Totally Rad Show',
       'apple':'Apple',
       'google':'Google',
 
