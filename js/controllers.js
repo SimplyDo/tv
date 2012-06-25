@@ -47,6 +47,7 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
 
     Storage.clear();
     $scope.initChannels();
+    $scope.videoDetails = false;
 
   }
 
@@ -81,6 +82,16 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
 
   }
 
+  $scope.whatIsOn = function() {
+      
+    var playlist = player.getPlaylist();
+    var index = player.getPlaylistIndex();
+    var currentVideoId = playlist[index];
+
+    $scope.videoDetails = youTube.videoById({item:currentVideoId});
+
+  }
+
   $scope.stop = function() {
       
     player.pauseVideo();
@@ -89,18 +100,21 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
 
   $scope.next = function() {
       
+    $scope.videoDetails = false;
     player.nextVideo();
 
   }
 
   $scope.previous = function() {
-      
+    
+    $scope.videoDetails = false;
     player.previousVideo();
 
   }
 
   $scope.shuffle = function() {
-      
+    
+    $scope.videoDetails = false;
     player.setShuffle({
       shufflePlaylist:true
     });
@@ -110,7 +124,8 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
   }
 
   $scope.unShuffle = function() {
-      
+    
+    $scope.videoDetails = false;
     $scope.selectChannel($scope.currentChannel);
 
   }
@@ -125,6 +140,7 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
 
   $scope.selectChannel = function(channel) {
 
+    $scope.videoDetails = false;
     $location.path('/channel/'+channel);
     $scope.currentChannel  = channel;
 

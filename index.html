@@ -15,13 +15,21 @@
       <li><a ng-click="showSwitcher = true;" ng-hide="showSwitcher">Switch Channel</a></li>
     </ul>
     <ul ng-hide="showSwitcher || !currentChannel">
-      <li><a ng-click="next();">next Show</a></li>
-      <li><a ng-click="previous();">previous Show</a></li>
+      <li><a ng-click="whatIsOn();">What is on?</a></li>
+      <li><a ng-click="previous();">previous</a></li>
+      <li><a ng-click="next();">next</a></li>
     </ul>
     <ul ng-hide="showSwitcher || !currentChannel">
       <li><a ng-click="shuffle();" ng-hide="shuffled">shuffle</a></li>
       <li><a ng-click="unShuffle();" ng-show="shuffled">un-shuffle</a></li>
     </ul>
+  </div>
+
+  <div id="videoDetails" ng-show="videoDetails">
+    <a ng-click="videoDetails = false;" class="closeSelector"><i class="icon-remove-sign"></i> Close</a>
+    <h2>{{videoDetails.data.title}}</h2>
+    <p>{{videoDetails.data.description}}</p>
+    <p><a href="{{videoDetails.data.player.default}}" target="new">Open on YouTube</a></p>
   </div>
 
   <div id="channelManagement" ng-show="showSwitcher">
@@ -85,7 +93,7 @@
   
   function onYouTubePlayerAPIReady() {
     player = new YT.Player('ytplayer', {
-      playerVars: {rel:0,version:3,controls:0,modestbranding:1,origin:'simplydo.com',listType:'user_uploads',showinfo:1}
+      playerVars: {rel:0,version:3,controls:0,modestbranding:1,origin:'simplydo.com',listType:'user_uploads',showinfo:0}
     });
     player.addEventListener("onStateChange", "onytplayerStateChange");
     player.addEventListener("onReady", "onytPlayerReady");

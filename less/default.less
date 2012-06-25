@@ -42,8 +42,31 @@ body {
 }
 
 
-#controls {
-
+#videoDetails {
+  position:absolute;
+  bottom:0px;
+  left:0px;
+  max-width:70%;
+  background-color:rgba(0,0,0,0.8);
+  padding:20px 40px;
+  z-index:50;
+  .rounded-corners(5px);
+  h2 {
+    color:#FFF;
+    margin-bottom:10px;
+  }
+  p {
+    color:#DDD;
+    font-size:1.1em;
+    line-height:1.5em;
+    max-height:4.5em;
+    overflow: hidden;              /* "overflow" value must be different from "visible"*/ 
+    -o-text-overflow: ellipsis;    /* Opera */
+    text-overflow:    ellipsis;
+  }
+  a {
+    font-weight:bold;
+  }
 }
 
 #ytplayer {
@@ -68,18 +91,6 @@ body {
   padding:0px;
   background-color:rgba(0,0,0,0.5);
   .rounded-corners(6px);
-  a.closeSelector {
-    position:absolute;
-    right:-10px;
-    top:-15px;
-    display:block;
-    font-weight:bold;
-    font-size:0.9em;
-    text-transform:uppercase;
-    padding:5px 15px 3px 10px;
-    background-color:#FFF;
-    .rounded-corners(10px);
-  }
   p {
     margin:10px 20px;
   }
@@ -151,3 +162,17 @@ a.warning {
     }
   }
 }
+
+
+a.closeSelector {
+    position:absolute;
+    right:-10px;
+    top:-15px;
+    display:block;
+    font-weight:bold;
+    font-size:0.9em;
+    text-transform:uppercase;
+    padding:5px 15px 3px 10px;
+    background-color:#FFF;
+    .rounded-corners(10px);
+  }
