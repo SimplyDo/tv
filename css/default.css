@@ -711,7 +711,7 @@ a.label:hover,a.badge:hover{color:#ffffff;text-decoration:none;cursor:pointer;}
 .hide{display:none;}
 .show{display:block;}
 .invisible{visibility:hidden;}
-body{margin:0px;padding:0px;background:#000000 url(../img/blur.jpg) no-repeat center center;}
+body{margin:0px;padding:0px;background:#000000 url(../img/blur.jpg) no-repeat top center;}
 #channelIndicator{position:absolute;text-align:right;right:20px;top:50%;margin-top:-120px;z-index:200;}#channelIndicator h1{color:#FFF;-moz-text-shadow:0px 1px 3px #000000;-webkit-text-shadow:0px 1px 3px #000000;text-shadow:0px 1px 3px #000000;margin-right:10px;}
 #channelIndicator ul{list-style:none;margin:5px 0px 20px 0px;}#channelIndicator ul a{display:inline-block;padding:5px 10px;font-size:1.3em;font-weight:bold;text-decoration:none;-moz-text-shadow:0px 1px 3px #000000;-webkit-text-shadow:0px 1px 3px #000000;text-shadow:0px 1px 3px #000000;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;}#channelIndicator ul a:hover{background-color:rgba(0, 0, 0, 0.5);color:#FFF;}
 #videoDetails{position:absolute;bottom:0px;left:0px;max-width:70%;background-color:rgba(0, 0, 0, 0.8);padding:20px 40px;z-index:50;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;}#videoDetails h2{color:#FFF;margin-bottom:10px;}
