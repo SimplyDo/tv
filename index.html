@@ -91,7 +91,7 @@
   
   function onYouTubePlayerAPIReady() {
     player = new YT.Player('ytplayer', {
-      playerVars: {rel:0,version:3,controls:0,modestbranding:1,origin:'simplydo.com',listType:'user_uploads',showinfo:0}
+      playerVars: {rel:0,version:3,controls:0,modestbranding:1,origin:'simplydo.com',listType:'user_uploads',showinfo:0,autoplay:1}
     });
     player.addEventListener("onStateChange", "onytplayerStateChange");
     player.addEventListener("onReady", "onytPlayerReady");
