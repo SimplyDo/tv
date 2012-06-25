@@ -712,7 +712,7 @@ a.label:hover,a.badge:hover{color:#ffffff;text-decoration:none;cursor:pointer;}
 .show{display:block;}
 .invisible{visibility:hidden;}
 body{margin:0px;padding:0px;background-color:#000;}
-#channelIndicator{position:absolute;text-align:right;right:20px;top:50px;z-index:200;}#channelIndicator h1{color:#FFF;-moz-text-shadow:0px 1px 3px #000000;-webkit-text-shadow:0px 1px 3px #000000;text-shadow:0px 1px 3px #000000;margin-right:10px;}
+#channelIndicator{position:absolute;text-align:right;right:20px;top:50%;margin-top:-120px;z-index:200;}#channelIndicator h1{color:#FFF;-moz-text-shadow:0px 1px 3px #000000;-webkit-text-shadow:0px 1px 3px #000000;text-shadow:0px 1px 3px #000000;margin-right:10px;}
 #channelIndicator ul{list-style:none;margin:5px 0px 20px 0px;}#channelIndicator ul a{display:inline-block;padding:5px 10px;font-size:1.3em;font-weight:bold;text-decoration:none;-moz-text-shadow:0px 1px 3px #000000;-webkit-text-shadow:0px 1px 3px #000000;text-shadow:0px 1px 3px #000000;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;}#channelIndicator ul a:hover{background-color:rgba(0, 0, 0, 0.5);color:#FFF;}
 #ytplayer{position:absolute;top:0px;left:0px;width:100%;height:100%;display:block;}
 #channelManagement{position:absolute;top:80px;left:50%;width:400px;margin-left:-200px;max-height:500px;z-index:100;padding:0px;background-color:rgba(0, 0, 0, 0.5);border-radius:6px;-webkit-border-radius:6px;-moz-border-radius:6px;}#channelManagement a.closeSelector{position:absolute;right:-10px;top:-15px;display:block;font-weight:bold;font-size:0.9em;text-transform:uppercase;padding:5px 15px 3px 10px;background-color:#FFF;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;}
