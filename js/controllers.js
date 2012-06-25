@@ -83,12 +83,15 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
   }
 
   $scope.whatIsOn = function() {
-      
-    var playlist = player.getPlaylist();
-    var index = player.getPlaylistIndex();
-    var currentVideoId = playlist[index];
-
-    $scope.videoDetails = youTube.videoById({item:currentVideoId});
+    
+    if (!$scope.videoDetails) { 
+      var playlist = player.getPlaylist();
+      var index = player.getPlaylistIndex();
+      var currentVideoId = playlist[index];
+      $scope.videoDetails = youTube.videoById({item:currentVideoId});
+    } else {
+      $scope.videoDetails = false;
+    }
 
   }
 
