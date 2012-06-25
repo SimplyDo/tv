@@ -2,7 +2,7 @@
 <html lang="en" ng-app="myApp">
 <head>
   <meta charset="utf-8">
-  <title>TV</title>
+  <title>Simply Do TV</title>
   <link rel="stylesheet" href="css/default.css"/>
 </head>
 <body>
@@ -13,14 +13,14 @@
     <h1 ng-show="currentChannel">{{channels[currentChannel]}}</h1>
     <p id="tagline"><a href="http://simplydo.com" target="new"><span ng-show="currentChannel">on </span>Simply Do TV</a></p>
     <ul>
-      <li><a ng-click="showSwitcher = true;" ng-hide="showSwitcher">Switch Channel</a></li>
+      <li><a ng-click="toggleSwitcher();">Switch Channel</a></li>
     </ul>
-    <ul ng-hide="showSwitcher || !currentChannel">
+    <ul ng-hide="!currentChannel">
       <li><a ng-click="whatIsOn();">What is on?</a></li>
       <li><a ng-click="previous();">previous</a></li>
       <li><a ng-click="next();">next</a></li>
     </ul>
-    <ul ng-hide="showSwitcher || !currentChannel">
+    <ul ng-hide="!currentChannel">
       <li><a ng-click="shuffle();" ng-hide="shuffled">shuffle</a></li>
       <li><a ng-click="unShuffle();" ng-show="shuffled">un-shuffle</a></li>
     </ul>
@@ -31,12 +31,12 @@
     <a ng-click="videoDetails = false;" class="closeSelector"><i class="icon-remove-sign"></i> Close</a>
     <h2>{{videoDetails.data.title}}</h2>
     <p>{{videoDetails.data.description}}</p>
-    <p><a href="{{videoDetails.data.player.default}}" target="new">Open on YouTube</a></p>
+    <p ng-show="videoDetails.data.player.default"><a href="{{videoDetails.data.player.default}}" target="new">Open on YouTube</a></p>
   </div>
 
   <div id="channelManagement" ng-show="showSwitcher">
     <a ng-click="showSwitcher = false;" class="closeSelector"><i class="icon-remove-sign"></i> Close</a>
-    <ul class="channels">
+    <ul class="channels {{showSwitcher}}">
       <li ng-repeat="(channel, displayName) in channels" ng-class="{active: channel == currentChannel}">
         <a ng-click="removeChannel(channel);" class="remove"><i class="icon-trash icon-white"></i></a>
         <a ng-click="selectChannel(channel);">{{displayName}}</a>

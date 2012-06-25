@@ -95,6 +95,16 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
 
   }
 
+  $scope.toggleSwitcher = function() {
+    
+    if (!$scope.showSwitcher) { 
+      $scope.showSwitcher = true;
+    } else {
+      $scope.showSwitcher = false;
+    }
+
+  }
+
   $scope.stop = function() {
       
     player.pauseVideo();
