@@ -10,7 +10,8 @@
 <div ng-controller="ChannelCtrl">
 
   <div id="channelIndicator">
-    <h1 ng-show="channels[currentChannel]">{{channels[currentChannel]}}</h1>
+    <h1 ng-show="currentChannel">{{channels[currentChannel]}}</h1>
+    <p id="tagline"><a href="http://simplydo.com" target="new"><span ng-show="currentChannel">on </span>Simply Do TV</a></p>
     <ul>
       <li><a ng-click="showSwitcher = true;" ng-hide="showSwitcher">Switch Channel</a></li>
     </ul>
@@ -23,6 +24,7 @@
       <li><a ng-click="shuffle();" ng-hide="shuffled">shuffle</a></li>
       <li><a ng-click="unShuffle();" ng-show="shuffled">un-shuffle</a></li>
     </ul>
+
   </div>
 
   <div id="videoDetails" ng-show="videoDetails">
@@ -57,10 +59,6 @@
       </div>
       
     </div>
-  </div>
-
-  <div id="tag">
-    <a href="http://simplydo.com" target="new">Simply Do TV</a>
   </div>
 
   <div ng-show="channels[currentChannel]">

@@ -724,5 +724,5 @@ body{margin:0px;padding:0px;background-color:#000;}
 #channelManagement .channels li a{text-decoration:none;}#channelManagement .channels li a.remove{float:right;margin-right:10px;}
 #channelManagement .channels li a:hover{color:#FFF;}
 a.warning{color:red;}
-#tag{position:absolute;font-size:1.2em;z-index:100;bottom:20px;right:20px;}#tag a{display:inline-block;padding:5px 10px;font-size:0.9em;font-weight:normal;text-transform:uppercase;color:#DDA;text-decoration:none;font-weight:bold;-moz-text-shadow:0px 1px 3px #000000;-webkit-text-shadow:0px 1px 3px #000000;text-shadow:0px 1px 3px #000000;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;background-color:rgba(0, 0, 0, 0.3);}#tag a:hover{color:#FFF;}
+#tagline{font-size:1.1em;z-index:100;font-weight:normal;margin-right:10px;margin-bottom:20px;-moz-text-shadow:0px 1px 3px #000000;-webkit-text-shadow:0px 1px 3px #000000;text-shadow:0px 1px 3px #000000;}#tagline a{color:#EEE;}#tagline a:hover{color:#FFF;}
 a.closeSelector{position:absolute;right:-10px;top:-15px;display:block;font-weight:bold;font-size:0.9em;text-transform:uppercase;padding:5px 15px 3px 10px;background-color:#FFF;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;}
