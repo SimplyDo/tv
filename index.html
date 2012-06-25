@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>TV</title>
+  <link rel="stylesheet" href="css/default.css"/>
+</head>
+<body>
+  
+<div ng-controller="ChannelCtrl">
+
+  <div id="channelIndicator">
+    <h1 ng-show="channels[currentChannel]">{{channels[currentChannel]}}</h1>
+    <ul>
+      <li><a ng-click="showSwitcher = true;" ng-hide="showSwitcher">Switch Channel</a></li>
+    </ul>
+    <ul ng-show="channels[currentChannel]" ng-hide="showSwitcher">
+      <li><a ng-click="next();">next Show</a></li>
+      <li><a ng-click="previous();">previous Show</a></li>
+    </ul>
+    <ul ng-show="channels[currentChannel]" ng-hide="showSwitcher">
+      <li><a ng-click="shuffle();" ng-hide="shuffled">shuffle</a></li>
+      <li><a ng-click="unShuffle();" ng-show="shuffled">un-shuffle</a></li>
+    </ul>
+  </div>
+
+  <div id="channelManagement" ng-show="showSwitcher">
+    <a ng-click="showSwitcher = false;" class="closeSelector"><i class="icon-remove-sign"></i> Close</a>
+    <ul class="channels">
+      <li ng-repeat="(channel, displayName) in channels" ng-class="{active: channel == currentChannel}">
+        <a ng-click="removeChannel(channel);" class="remove"><i class="icon-trash icon-white"></i></a>
+        <a ng-click="selectChannel(channel);">{{displayName}}</a>
+      </li>
+    </ul>
+    <div ng-show="storageSupport">
+      <p><a ng-click="showForm = true;" ng-hide="showForm">Add new Channel</a></p>
+      
+      <div ng-show="showForm">
+        <form ng-submit="addChannel()">
+          <p>
+            <input type="text" ng-model="newChannel.name" placeholder="Enter youtube ID" />
+            <input type="text" ng-model="newChannel.displayName" placeholder="Enter a display name" />
+          </p>
+          <p>
+            <button type="submit" class="btn btn-primary">Add</button> <a class="btn" ng-click="showForm = false;">Cancel</a>
+          </p>
+        </form>
+        <p><a ng-click="resetDefaultChannels();" class="warning">Restore Default Channels</a></p>
+      </div>
+      
+    </div>
+  </div>
+
+  <div id="tag">
+    <a href="http://simplydo.com" target="new">Simply Do TV</a>
+  </div>
+
+  <div ng-show="channels[currentChannel]">
+    <div id="ytplayer"></div>
+  </div>
+
+</div>
+
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular/angular-resource.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/filters.js"></script>
+<script src="js/directives.js"></script>
+
+<script>
+
+  // 1. Declaring some global variables
+  var player;
+
+  // 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+  tag.src = "http://www.youtube.com/player_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+  
+  function onYouTubePlayerAPIReady() {
+    player = new YT.Player('ytplayer', {
+      playerVars: {rel:0,version:3,controls:0,modestbranding:1,origin:'simplydo.com',listType:'user_uploads',showinfo:1}
+    });
+    player.addEventListener("onStateChange", "onytplayerStateChange");
+    player.addEventListener("onReady", "onytPlayerReady");
+  }
+
+  // 4. The API will call this function when the video player is ready.
+  function onytPlayerReady() {
+    //alert('ready');
+  }
+
+  // 5. The API calls this function when the player's state changes.
+  function onytplayerStateChange() {
+  }
+</script>
+</body>
+</html>
