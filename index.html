@@ -14,11 +14,11 @@
     <ul>
       <li><a ng-click="showSwitcher = true;" ng-hide="showSwitcher">Switch Channel</a></li>
     </ul>
-    <ul ng-show="channels[currentChannel]" ng-hide="showSwitcher">
+    <ul ng-hide="showSwitcher || !currentChannel">
       <li><a ng-click="next();">next Show</a></li>
       <li><a ng-click="previous();">previous Show</a></li>
     </ul>
-    <ul ng-show="channels[currentChannel]" ng-hide="showSwitcher">
+    <ul ng-hide="showSwitcher || !currentChannel">
       <li><a ng-click="shuffle();" ng-hide="shuffled">shuffle</a></li>
       <li><a ng-click="unShuffle();" ng-show="shuffled">un-shuffle</a></li>
     </ul>
