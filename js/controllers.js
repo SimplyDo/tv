@@ -25,9 +25,7 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
       'totallyradshow':'The Totally Rad Show',
       'apple':'Apple',
       'google':'Google',
-      'novaonline':'NOVA',
-      'nationalgeographic':'National Geographic',
-      'nasatelevision':'NASA'
+
     };
 
   }
