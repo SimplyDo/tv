@@ -115,7 +115,6 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
       
     $scope.videoDetails = false;
     player.nextVideo();
-    player.playVideo();
 
   }
 
@@ -123,7 +122,6 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
     
     $scope.videoDetails = false;
     player.previousVideo();
-    player.playVideo();
 
   }
 
@@ -164,8 +162,7 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
       list:channel
     });
 
-    player.setLoop({loopPlaylists:true});
-    player.playVideo();
+    player.setLoop({loopPlaylists:true})
 
     $scope.showSwitcher = false;
     $scope.shuffled = false;
