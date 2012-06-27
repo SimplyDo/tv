@@ -24,8 +24,8 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
       'geekandsundry':'Geek & Sundray',
       'totallyradshow':'The Totally Rad Show',
       'apple':'Apple',
-      'google':'Google',
-
+      'google':'Google'
+      'novaonline':'NOVA'
     };
 
   }
