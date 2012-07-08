@@ -65,6 +65,8 @@
     <div id="ytplayer"></div>
   </div>
 
+  <div id="overlay"> </div>
+
 </div>
 
 <script src="lib/angular/angular.js"></script>
@@ -91,7 +93,7 @@
   
   function onYouTubePlayerAPIReady() {
     player = new YT.Player('ytplayer', {
-      playerVars: {rel:0,version:3,controls:0,modestbranding:1,origin:'simplydo.com',listType:'user_uploads',showinfo:1},
+      playerVars: {rel:0,version:3,controls:0,modestbranding:0,origin:'simplydo.com',listType:'user_uploads',showinfo:0},
       events: {
       'onReady': onytPlayerReady,
       'onStateChange': onytplayerStateChange
