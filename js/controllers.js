@@ -78,7 +78,7 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
 
   $scope.play = function() {
       
-    player.playVideo();
+    //player.playVideo();
 
   }
 
@@ -107,7 +107,7 @@ function ChannelCtrl($scope,$location,youTube,Storage) {
 
   $scope.stop = function() {
       
-    player.pauseVideo();
+    //player.pauseVideo();
 
   }
 
